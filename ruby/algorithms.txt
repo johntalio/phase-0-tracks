@@ -1,0 +1,31 @@
+Algorithm for using an elevator:
+
+-Enter the elevator.
+-Turn 180 degrees to face the doors of the elevator.
+-To the right and/or left of the doors, locate the button panel.
+-Above the button panel, note the display which shows the floor you are currently on.
+-On the button panel, locate the button with the number corresponding to the floor you wish to visit.
+	-If you wish to visit the ground floor or lobby (either of which may also 		serve as the first floor), you may need to press the “G” or “L” button 		instead of the 	“1” button.
+-Press the button with the number (or letter) corresponding to the floor you wish to visit.
+	-If the doors of the elevator have not yet closed, locate and press the 		button that displays an arrow indicating closing doors.
+-After the doors have closed, wait until you reach your desired floor.
+	-When you have reached your desired floor, hold the doors open for others to 	exit using the button that displays an arrow indicating opening doors.
+	-Otherwise, exit the elevator immediately.
+	-If the elevator is not functioning properly, press the “Call” button or the 	button depicting a fireman’s hat to signal for help.
+
+Algorithm for washing dishes:
+
+-Put on latex gloves.
+-Turn on the sink faucet.
+	-Confirm that the faucet is producing hot water.
+	-If the water is cold, adjust the faucet’s handles so that it produces hot 		water.
+	-If necessary, wait until the water is hot.
+-Locate the dish soap.
+-Locate a sponge.
+-Take the sponge and cover it in the dish soap.
+-Locate a dirty plate, bowl, utensil, glass, or other object that needs to be cleaned.
+-Using the now soapy sponge, rub the object in the area(s) that need(s) cleaning.
+	-Rinse the now soapy object with hot water and check if it needs further 		cleaning.
+	-If the object needs further cleaning, repeat the previous step until the 		object is clean.
+-Continue to clean other dirty objects using the previous steps until all objects are clean.
+	-When all objects are clean, rinse the sponge, remove the latex gloves, and 		turn off the water.
