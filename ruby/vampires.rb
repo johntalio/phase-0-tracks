@@ -1,5 +1,16 @@
+puts "How many employees will be processed?"
+	number_employees = gets.to_i
+
 puts "What is your name?"
 	name = gets.chomp
+
+	if name == "Drake Cula" or name == "Tu Fang"
+		name = false
+		puts "Hmm..."
+	else
+		name = true
+		puts "Thanks!"
+	end
 
 puts "How old are you?"
 	age = gets.to_i
@@ -10,10 +21,9 @@ puts "What year were you born?"
 	if year == 2016 - age
 		year = true
 		puts "Thanks!"
-	else
+	else	
 		year = false
 		puts "That doesn't seem right..."
-		
 	end
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you (yes/no)?"
@@ -22,9 +32,11 @@ puts "Our company cafeteria serves garlic bread. Should we order some for you (y
 	if garlic == "yes"
 		garlic = true
 		puts "Ok! It's delicious!"
-	else
+	elsif garlic == "no"
 		garlic = false
 		puts "Suit yourself."
+	else
+		puts "I don't understand..."
 	end
 
 puts "Would you like to enroll in the company's health insurance (yes/no)?"
@@ -33,15 +45,25 @@ puts "Would you like to enroll in the company's health insurance (yes/no)?"
 	if insurance == "yes"
 		insurance = true
 		puts "No problemo!"
-	else
+	elsif insurance == "no"		
 		insurance = false
 		puts "Suit yourself."
+	else
+		puts "I don't understand..."
 	end
 
-if
-	year && garlic || insurance
+if name == false
+	puts "Definitely a vampire."
+elsif year || (garlic && insurance)
 	puts "Probably not a vampire."
-else
+elsif	
+	year || (garlic || insurance)
 	puts "Probably a vampire."
-	
+elsif
+	year == false && garlic == false && insurance == false
+	puts "Almost certainly a vampire."
+else
+	puts "Results inconclusive."
 end
+
+
