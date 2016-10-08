@@ -1,3 +1,26 @@
 body {
-	background-color: red
+	background-color: orange;
+}
+
+section.column-1 {
+  background-color: red;
+  display: inline-block;
+  width: 350px;
+  margin: 10px;
+  padding: 10px;
+  border: dotted 10px;
+  border-color: black;
+  font-family: "Comic", sans-serif;
+}
+
+section.column-2 {
+  background-color: green;
+  display: inline-block;
+  vertical-align: top;
+  width: 350px;
+  margin: 10px;
+  padding: 10px;
+  border: dashed 10px;
+  border-color: black;
+  font-family: "Helvetica", sans-serif;
 }
