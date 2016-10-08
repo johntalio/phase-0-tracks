@@ -1,5 +1,7 @@
 puts "How many employees will be processed?"
 	number_employees = gets.to_i
+	puts "Ok, let's get started."
+
 
 puts "What is your name?"
 	name = gets.chomp
@@ -52,18 +54,20 @@ puts "Would you like to enroll in the company's health insurance (yes/no)?"
 		puts "I don't understand..."
 	end
 
-if name == false
+employees_processed = 0
+while employees_processed <= number_employees
+	employees_processed += 1
+	if name == false
 	puts "Definitely a vampire."
-elsif year || (garlic && insurance)
-	puts "Probably not a vampire."
-elsif	
-	year || (garlic || insurance)
-	puts "Probably a vampire."
-elsif
-	year == false && garlic == false && insurance == false
-	puts "Almost certainly a vampire."
-else
-	puts "Results inconclusive."
+	elsif year || (garlic && insurance)
+		puts "Probably not a vampire."
+	elsif	
+		year || (garlic || insurance)
+		puts "Probably a vampire."
+	elsif
+		year == false && garlic == false && insurance == false
+		puts "Almost certainly a vampire."
+	else
+		puts "Results inconclusive."
+	end
 end
-
-
