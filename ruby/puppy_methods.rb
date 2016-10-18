@@ -16,6 +16,10 @@ class Puppy
   def dog_years(int)
   	p int*7
   end
+
+  def eat(item)
+  	puts "Yummy, #{item}!"
+  end
 end
 puppy = Puppy.new
 puppy.fetch("ball")
@@ -26,5 +30,5 @@ puppy.roll_over
 
 puppy.dog_years(3)
 
-
+puppy.eat("newspaper")
 
