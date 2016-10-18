@@ -58,7 +58,14 @@ kitty.purr(10)
 
 kitty.hairball
 
+litter = []
 
+50.times do
+	litter << Kitty.new
+end
 
+litter.each do kitty.purr(2)
+end
 
-
+litter.each do kitty.hairball
+end
