@@ -46,8 +46,19 @@ class Kitty
 		puts "Purr"*int
 	end
 
+	def hairball
+		puts "*coughs up hairball*"
+	end
+
 end
 
 kitty = Kitty.new
 
 kitty.purr(10)
+
+kitty.hairball
+
+
+
+
+
