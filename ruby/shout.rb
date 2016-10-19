@@ -2,6 +2,10 @@ module Shout
 	def yell_hopelessly(words)
 		puts words + "!?!?!?!?!?" + ">:O"
 	end
+
+	def yell_confused(words)
+		puts words + "??????????" + "|:O"
+	end
 #  def self.yell_angrily(words)
 #    words + "!!!" + " :("
 #  end
@@ -23,8 +27,8 @@ class Amnesia
 end
 
 existential = Existential_Meltdown.new
-existential.yell_hopelessly("WHO AM I")
+existential.yell_hopelessly("WHAT AM I")
 
 amnesia = Amnesia.new
-amnesia.yell_hopelessly("WHO AM I")
+amnesia.yell_confused("WHO AM I")
 
