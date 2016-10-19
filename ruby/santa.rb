@@ -11,8 +11,8 @@ class Santa
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
 
-	def eat_milk_and_cookies(string)
-		puts "That was a good #{string}!"
+	def eat_milk_and_cookies(cookie)
+		puts "That was a good #{cookie}!"
 	end
 
 	def about
@@ -32,3 +32,12 @@ santa.speak
 
 santa.eat_milk_and_cookies("chocolate chip")
 
+sleighs = ["Red Hot", "Candy Cane", "Rudolph's Light", "One Night", "The Spirit of Christmas"]
+garage = []
+puts "Preparing Santa's Sleighs..."
+sleighs.each do |sleigh|
+	puts "#{sleigh} is Jingle Belled and ready to go!"
+	garage << sleigh
+	puts "There are now #{garage.length} sleigh(s) in the garage."
+	puts "--------------"
+end
