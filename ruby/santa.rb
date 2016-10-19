@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@gender = gender
@@ -34,17 +37,6 @@ class Santa
 		end
 	end
 
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
 end
 
 santa = Santa.new("Female", "African American")
@@ -74,3 +66,25 @@ sleighs.each do |sleigh|
 	puts "There are now #{garage.length} sleigh(s) in the garage."
 	puts "--------------"
 end
+
+class Santa_Sim
+	def initialize
+		puts "Initializing Santa Simulator..."
+		@gender_array = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+		@ethnicities_array = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+		@any_age = (0..140).select {|num| num}
+	end
+
+	def create
+		100.times {
+			puts "LOOK, IT'S A NEW SANTA!"
+			puts "Gender = #{@gender_array.sample}"
+			puts "Ethnicity = #{@ethnicities_array.sample}"
+			puts "Age = #{@any_age.sample}"
+		}
+	end
+end
+
+santa_sim = Santa_Sim.new
+
+santa_sim.create
