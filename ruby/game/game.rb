@@ -60,7 +60,7 @@ class Invisa_Word
 			puts "Congratulations! You won! The word was #{@secret_word}!"
 			return true
 		elsif @loser
-			puts "I guess this was simply too tough for you! :P The word was: #{@secret_word}"
+			puts "I guess this was simply too tough for you! :P The word was #{@secret_word}"
 			return false
 		end
 	end
