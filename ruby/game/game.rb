@@ -1,75 +1,83 @@
-# game class
-
-class CupGame
-  attr_accessor :cups
-  attr_accessor :guesses
-  attr_reader :guess_count
-  attr_reader :is_over
+class Invisa_Word
+	attr_reader :guess_count
+	attr_accessor :game_end
+	attr_accessor :secret_word
+	attr_accessor :guess_count
+	attr_reader :word_form
+	def initialize
+		@secret_word = ""
+		@word_form = ""
+		@guess_list = []
+		@guess_count = 0
+		@game_end = false
+		@winner = false
+		@loser = true
+	end
+	def create(word)
+		@secret_word = word
+		@guess_count = word.length
+		word.length.times do |x|
+			@word_form += "_"
+		end
+		@word_form
+	end
 	
-  def initialize
-    @cups = cups
-    @guesses = []
-    @guess_count = 0
-    @is_over = false
-  end
-  
-  def number_of_guesses
-  	cups.length*2
-  end
-  
-  def convert_word
-  	split_cups = cups.split('')
-  	split_cups.each do |letter|
-  		hidden_cups = letter.gsub!(letter, "_")
-  	end
-  end
-  
-  def guess_check
-  	split_cups = cups.split('')
-  	if @guesses.include?(split_cups)
-	  	puts "aya"
-  	#else
-  	#	puts "Sorry, you have guessed that letter before. Please #try again."
-  	#	@guess_count += 1
-  	end
-  end
-  
-  def check_cup(index)
-  	@guess_count += 1
-  	if @cups[index] == "ball"
-  		@is_over = true
-  	else
-  		false
-  	end
-  end
+	def replace(letter)
+		if @guess_list != nil
+			if @guess_list.include? letter
+				puts "Sorry, you've guessed this letter before. Try again."
+				return nil
+			end
+		end
+		@guess_list.push(letter)
+		correct_answer = @secret_word.split(//)
+		form = @word_form.split(//)
+		if @secret_word.include? letter
+			for each in 0..correct_answer.length
+				if correct_answer[each] == letter
+					form[each] = letter
+				end
+			end
+			@word_form = form.join
+			if @word_form.eql?(@secret_word)
+				@winner = true
+				@game_end = true
+			end
+			@word_form
+		else
+			@guess_count -= 1
+			puts "Incorrect. You have #{@guess_count} guesses left."
+			if @guess_count == 0
+				@loser = true
+				@game_end = true
+			end
+			return @word_form
+		end
+	end
+
+	def end_game
+		if @winner
+			puts "Congratulations! You won! The word was #{@secret_word}!"
+			return true
+		elsif @loser
+			puts "I guess this was simply too tough for you! :P The word was: #{@secret_word}"
+			return false
+		end
+	end
 end
 
-# user interface
+#Driver Code
+puts "Welcome to Invisa Word!"
+invisa_word = Invisa_Word.new
 
-puts "Welcome to the Cup Game!"
-game = CupGame.new
 
-puts "Enter a word"
-	word = gets.chomp
-	game.cups = word
+puts "Please enter your word, Player 1: "
+input = gets.chomp.downcase
+invisa_word.create(input)
 
-puts "Determining number of guesses..."
-	puts "You have #{game.number_of_guesses} guesses."
-	
-puts "This is your hidden word, player 2: #{game.convert_word}"
-
-puts "Please enter your guess"
-	letter = gets.chomp
-	game.guesses << letter
-	
-puts "The current state of the word: #{game.guess_check}"
-
-while @guess_count <= game.number_of_guesses
-	game.guess_check
-	guess = gets.chomp
-#  if !game.check_cup(guess - 1)
-#  	puts "Nope! Try again."
-#	end
+while !invisa_word.game_end
+	puts "Player 2, you must guess: #{invisa_word.word_form}. What letter would you like to guess? (Repetitive entries will not be counted.)"
+	guess = gets.chomp.slice(0)
+	invisa_word.replace(guess)
 end
-
-#puts "You won in #{game.guess_count} guesses!"
+invisa_word.end_game
