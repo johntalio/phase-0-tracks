@@ -25,9 +25,10 @@ longest(determine_length);
 longest(huge);
 
 // Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
-// Define an object with a few key-value pairs; store it in a variable.
-// Create a function that passes two objects as parameters.
-// 
+// Define an object with a couple key-value pairs; store it in a variable.
+// Create a function that passes two objects and a string as parameters.
+// Create an array out of the keys/values of each object so they can be searched through.
+// Use .includes on the arrays of the keys/values and compare them for a match.
 
 var revenant_movie = {movie: "Revenant", award: "Oscar"}
 var room_movie = {movie: "Room", award: "Oscar"}
