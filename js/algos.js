@@ -1,6 +1,6 @@
 // Write a function that returns the longest word/phrase of an array of words/phrases.
 // Define an array of words/phrases; store it in a variable.
-// Create a function that passes an array as a parameter.
+// Create a function that passes an array as the parameter.
 // Use .length to determine the length of the items in the array.
 // Loop through the array using .length and the index number of the longest array item to pick out the longest item.
 
@@ -56,8 +56,24 @@ find_match(revenant_movie, room_movie, "Revenant");
 find_match(revenant_movie, room_movie, "Oscar");
 find_match(person, room_movie, "Oscar");
 
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
+// Create a function that passes an integer as the parameter.
+// Within the function, store an empty array in a variable.
+// Depending on the value of the parameter, have the function add that many strings to the empty array.
+// Generate strings of random lengths with __________
 
+function array_builder() {
+	var construct = []
+	character_set = "abcdefghijklmnopqrstuvwxyz"
+	var new_string = "";
 
+	for (var i = 0; i < 10; i++) {
+		var generate_int = Math.floor(Math.random() * character_set.length);
+		new_string += character_set.substring(generate_int, generate_int + 1);
+	}
+	return new_string
+}
 
+console.log(array_builder());
 
 
