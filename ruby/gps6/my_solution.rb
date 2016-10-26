@@ -1,11 +1,11 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [with: Albert].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# It allows up to point to a file using starting point of the current file.
-#
+# It allows us to point to a file using the current file as a starting point.
+
 require_relative 'state_data'
 
 class VirusPredictor
@@ -95,3 +95,12 @@ end
 
 #=======================================================================
 # Reflection Section
+# Right now, the hashes contained by STATE_DATA are written with the key as a string and the value as a hash that, itself, follows a syntactic sugar syntax. While this method works, you could replace the string key as a symbol (written as :Alabama, for instance). You could also rewrite the syntactic sugar in the value hash (by writing :population_density, for instance).
+# The purpose of require_relative is to link one of your files to another one of your file. On the other hand, require links one of your files to a file, or library, that could have been created by someone else.
+# You can iterate through a hash by, in this case at least, calling the value hash in STATE_DATA and then bracketing the keys within that hash to display that key's information.
+# We learned that the variables in virus_effects were unnecessary given that they were previously instantiated. We created more DRY code by adding an attr_reader method with those instances which allowed us to eliminate any @ signs as well.
+# For me, learning to iterate through a hash was a concept that gave me some trouble at first. But I think that working through this challenge made me more comfortable with working with that type of code. Also, the concept of DRY was solidified for me.
+
+
+
+
