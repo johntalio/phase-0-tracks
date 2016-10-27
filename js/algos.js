@@ -8,21 +8,21 @@ var long_array = ["big", "bigger", "biggest", "biggerer", "gigantorest"];
 var determine_length = ["long phrase","longest phrase","longer phrase"];
 var huge = ["hola", "hello", "konichiwa"];
 
-function longest(array) {
+function longest(construct) {
 	var length = 0;
 	var longest;
-	for (var i = 0; i < array.length; i++) {
-		if (array[i].length > length) {
-			length = array[i].length;
-			longest = array[i];
+	for (var i = 0; i < construct.length; i++) {
+		if (construct[i].length > length) {
+			length = construct[i].length;
+			longest = construct[i];
 		}
 	}
-	console.log(longest);
+	return longest;
 };
 
-longest(long_array);
-longest(determine_length);
-longest(huge);
+console.log(longest(long_array));
+console.log(longest(determine_length));
+console.log(longest(huge));
 
 // Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
 // Define an object with a couple key-value pairs; store it in a variable.
@@ -60,20 +60,31 @@ find_match(person, room_movie, "Oscar");
 // Create a function that passes an integer as the parameter.
 // Within the function, store an empty array in a variable.
 // Depending on the value of the parameter, have the function add that many strings to the empty array.
-// Generate strings of random lengths with __________
+// Generate strings of random lengths by researching.
+// Pass the new array back through the first function as a parameter to get the longest string of the new array.
 
-function array_builder() {
+function array_builder(integer) {
 	var construct = []
 	character_set = "abcdefghijklmnopqrstuvwxyz"
-	var new_string = "";
 
-	for (var i = 0; i < 10; i++) {
-		var generate_int = Math.floor(Math.random() * character_set.length);
-		new_string += character_set.substring(generate_int, generate_int + 1);
+	for (var i = 0; i <= integer - 1; i++) {
+		var new_string = "";
+		
+		for (var a = 0; a <= Math.floor(Math.random() * 10); a++) {
+			new_string += character_set.charAt(Math.floor(Math.random() * character_set.length));
+		}
+		construct.push(new_string);
 	}
-	return new_string
+	return construct;
 }
 
-console.log(array_builder());
+console.log(array_builder(3));
+console.log(array_builder(5));
+console.log("-------*END*--------")
 
-
+for (var b = 0; b < 10; b++) {
+	array_multiplier = array_builder(5);
+	console.log(array_multiplier);
+	console.log(longest(array_multiplier));
+	console.log("--------end---------");
+}
