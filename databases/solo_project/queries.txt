@@ -1,0 +1,54 @@
+SQL Queries, inputs and outputs:
+
+1)
+input: SELECT * FROM monuments;
+output:	1|Mount Fuji|true|false|1
+	2|Stonehenge|true|true|2
+	3|Uluru|true|false|3
+	4|Great Wall of China|false|true|4
+
+2)
+input: UPDATE monuments SET spiritually_significant="true" WHERE id=4;
+output: None, but:  SELECT * FROM monuments WHERE id=4;
+		     4|Great Wall of China|true|true|4
+
+3)
+input: SELECT * FROM monuments, countries WHERE monuments.location_id = countries.id;
+output:	1|Mount Fuji|true|false|1|1|Japan
+	2|Stonehenge|true|true|2|2|England
+	3|Uluru|true|false|3|3|Australia
+	4|Great Wall of China|false|true|4|4|China
+
+4)
+input: SELECT monuments.name, countries.name FROM monuments JOIN countries ON monuments.location_id = countries.id;
+output:	Mount Fuji|Japan
+	Stonehenge|England
+	Uluru|Australia
+	Great Wall of China|China
+
+5)
+input: DELETE FROM monuments WHERE man_made="true";
+output: None, but:  SELECT * FROM monuments;
+		     1|Mount Fuji|true|false|1
+		     3|Uluru|true|false|3
+
+CROSS JOIN
+input: SELECT monuments.name, spiritually_significant, man_made FROM monuments CROSS JOIN countries;
+output:	Mount Fuji|true|false
+	Mount Fuji|true|false
+	Mount Fuji|true|false
+	Mount Fuji|true|false
+	Uluru|true|false
+	Uluru|true|false
+	Uluru|true|false
+	Uluru|true|false
+
+INNER JOIN
+input: SELECT monuments.name, spiritually_significant, man_made FROM monuments INNER JOIN countries ON monuments.location_id = countries.id;
+output:	Mount Fuji|true|false
+	Uluru|true|false
+
+OUTER JOIN
+input: SELECT monuments.name, spiritually_significant, man_made FROM monuments LEFT OUTER JOIN countries ON monuments.location_id = countries.id;
+output:	Mount Fuji|true|false
+	Uluru|true|false
