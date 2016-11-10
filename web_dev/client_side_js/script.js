@@ -21,7 +21,7 @@ function hide(event) {
 function emphasisMajor(event) {
 	console.log("You clicked.");
 	console.log(event);
-	event.target.style = "font-weight:800;";
+	event.target.style = "text-transform:uppercase;";
 	event.target.style.border = "10px solid pink";
 }
 
