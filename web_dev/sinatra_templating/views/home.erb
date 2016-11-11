@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Student Management System</title>
@@ -5,8 +6,9 @@
 </head>
 <body>
   <h1>Student Management System</h1>
-  <p>Welcome to the student management system.</p>
+  <p>Welcome to the Student Management System.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
+  <p>Click <a href="home2.erb">here</a> to visit the Campus Management System.</p>
   <ul>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>
