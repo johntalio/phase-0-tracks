@@ -44,3 +44,31 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# write a GET route that displays an address
+
+get '/contact' do
+  "999 Mount Everest Way"
+end
+
+# write a GET route with a query parameter and a conditional
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
+
+# write a GET route with a route parameter that adds two numbers
+
+get '/add_numbers/:number1/:number2' do
+  number1 = params[:number1]
+  number2 = params[:number2]
+  sum = number1.to_i + number2.to_i
+  "#{number1} plus #{number2} is #{sum}."
+end
+
+
