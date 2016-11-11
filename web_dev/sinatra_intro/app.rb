@@ -70,5 +70,3 @@ get '/add_numbers/:number1/:number2' do
   sum = number1.to_i + number2.to_i
   "#{number1} plus #{number2} is #{sum}."
 end
-
-
