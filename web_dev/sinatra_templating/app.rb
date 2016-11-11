@@ -24,4 +24,20 @@ post '/students' do
   redirect '/'
 end
 
+# show campuses on the home page
+get '/home2.erb' do
+	@campuses = db.execute("SELECT * FROM campuses")
+	erb :home2
+end
+
+get '/campuses/new' do
+	erb :new_campus
+end
+
+# create new campuses via a form
+post '/campuses' do
+	db.execute("INSERT INTO campuses (state, city) VALUES (?, ?)", [params['state'], params['city']])
+	redirect '/home2.erb'
+end
+
 # add static resources
